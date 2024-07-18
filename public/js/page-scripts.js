@@ -52,6 +52,46 @@ function loadPageData(ajaxPage, url){
 }
 Dropzone.autoDiscover = false;
 function initPlugins(){
+	$('select.selectize').each(function() {
+		var maxItems = $(this).data("max-items");
+		var select = $(this).selectize({
+			create: true,
+			maxItems: maxItems
+		});
+		return select;
+	});
+	$('.selectize-ajax').each(function() {
+		var endpoint = $(this).data("endpoint");
+		var maxItems = $(this).data("max-items");
+		var select = $(this).selectize({
+			valueField: 'value',
+			labelField: 'label',
+			searchField: ['label'],
+			options: [],
+			create: true,
+			maxItems: maxItems,
+			render: {
+				option: function(item, escape) {
+					return '<div>' + escape(item.label) + '</div>';
+				}
+			},
+			load: function(query, callback) {
+				if (!query.length) return callback();
+				$.ajax({
+					url: endpoint + '?search=' + query,
+					type: 'GET',
+					dataType: 'json',
+					error: function() {
+						callback();
+					},
+					success: function(res) {
+						callback(res);
+					}
+				});
+			}
+		});
+		return select;
+	});
 	$('.datepicker').flatpickr({
 		altInput: true, 
 		allowInput:true,

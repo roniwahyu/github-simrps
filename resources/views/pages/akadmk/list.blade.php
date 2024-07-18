@@ -94,6 +94,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <th class="td-date_created" > Date Created</th>
                                         <th class="td-date_updated" > Date Updated</th>
                                         <th class="td-isactive" > Isactive</th>
+                                        <th class="td-semester" > Semester</th>
                                         <th class="td-btn"></th>
                                     </tr>
                                 </thead>
@@ -178,6 +179,9 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                 </td>
                                 <td class="td-isactive">
                                     <?php echo  $data['isactive'] ; ?>
+                                </td>
+                                <td class="td-semester">
+                                    <?php echo  $data['semester'] ; ?>
                                 </td>
                                 <!--PageComponentEnd-->
                                 <td class="td-btn">

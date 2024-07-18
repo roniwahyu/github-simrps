@@ -142,4 +142,52 @@ class ComponentsData{
 		$arr = DB::select($sqltext, $query_params);
 		return $arr;
 	}
+	
+
+	/**
+     * id_fakultas_option_list Model Action
+     * @return array
+     */
+	function id_fakultas_option_list(){
+		$sqltext = "SELECT id_fakultas as value, concat(nama_fakultas, id_fakultas) as label FROM akad_fakultas";
+		$query_params = [];
+		$arr = DB::select($sqltext, $query_params);
+		return $arr;
+	}
+	
+
+	/**
+     * rpsrps_id_prodi_option_list Model Action
+     * @return array
+     */
+	function rpsrps_id_prodi_option_list(){
+		$sqltext = "SELECT id_prodi as value, concat('(',id_prodi,') ',nama_prodi) as label FROM akad_prodi";
+		$query_params = [];
+		$arr = DB::select($sqltext, $query_params);
+		return $arr;
+	}
+	
+
+	/**
+     * rpsrps_id_mk_option_list Model Action
+     * @return array
+     */
+	function rpsrps_id_mk_option_list(){
+		$sqltext = "SELECT id as value, id, concat('(',kode_mk,') ',nm_mk) as label FROM akad_mk";
+		$query_params = [];
+		$arr = DB::select($sqltext, $query_params);
+		return $arr;
+	}
+	
+
+	/**
+     * id_otoritas1_option_list Model Action
+     * @return array
+     */
+	function id_otoritas1_option_list(){
+		$sqltext = "SELECT DISTINCT nidn AS value,concat('(',nidn,') ',nama_lengkap) AS label FROM akad_dosen";
+		$query_params = [];
+		$arr = DB::select($sqltext, $query_params);
+		return $arr;
+	}
 }

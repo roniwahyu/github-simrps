@@ -481,6 +481,30 @@ Route::get('componentsdata/id_cpmk_option_list',  function(Request $request){
 		return $compModel->id_cpmk_option_list($request);
 	}
 );
+	
+Route::get('componentsdata/id_fakultas_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->id_fakultas_option_list($request);
+	}
+);
+	
+Route::get('componentsdata/rpsrps_id_prodi_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->rpsrps_id_prodi_option_list($request);
+	}
+);
+	
+Route::get('componentsdata/rpsrps_id_mk_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->rpsrps_id_mk_option_list($request);
+	}
+);
+	
+Route::get('componentsdata/id_otoritas1_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->id_otoritas1_option_list($request);
+	}
+);
 
 
 Route::post('fileuploader/upload/{fieldname}', 'FileUploaderController@upload');

@@ -81,8 +81,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         <th class="td-id_otoritas1" > Id Otoritas1</th>
                                         <th class="td-id_otoritas2" > Id Otoritas2</th>
                                         <th class="td-deskripsi_rps" > Deskripsi Rps</th>
-                                        <th class="td-date_created" > Date Created</th>
-                                        <th class="td-date_updated" > Date Updated</th>
                                         <th class="td-btn"></th>
                                     </tr>
                                 </thead>
@@ -130,12 +128,6 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             </td>
                             <td class="td-deskripsi_rps">
                                 <?php echo  $data['deskripsi_rps'] ; ?>
-                            </td>
-                            <td class="td-date_created">
-                                <?php echo  $data['date_created'] ; ?>
-                            </td>
-                            <td class="td-date_updated">
-                                <?php echo  $data['date_updated'] ; ?>
                             </td>
                             <!--PageComponentEnd-->
                             <td class="td-btn">

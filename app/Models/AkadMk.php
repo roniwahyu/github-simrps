@@ -28,7 +28,7 @@ class AkadMk extends Model
      * @var array
      */
 	protected $fillable = [
-		'kode_mk','id_siakad_kurikulum','nm_mk','jns_mk','kurikulum_mk','kelompok_mk','sks_mk','sks_tatapmuka','sks_praktikum','min_mk_lulus','status_mk','upload_silabus_mk','upload_sap_mk','upload_bahan_mk','upload_diktat_mk','id_prodi','isactive'
+		'kode_mk','id_siakad_kurikulum','nm_mk','jns_mk','kurikulum_mk','kelompok_mk','sks_mk','sks_tatapmuka','sks_praktikum','min_mk_lulus','status_mk','upload_silabus_mk','upload_sap_mk','upload_bahan_mk','upload_diktat_mk','id_prodi','isactive','semester'
 	];
 	public $timestamps = false;
 	
@@ -47,10 +47,11 @@ class AkadMk extends Model
 				upload_silabus_mk LIKE ?  OR 
 				upload_sap_mk LIKE ?  OR 
 				upload_bahan_mk LIKE ?  OR 
-				upload_diktat_mk LIKE ? 
+				upload_diktat_mk LIKE ?  OR 
+				semester LIKE ? 
 		)';
 		$search_params = [
-			"%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%"
+			"%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%"
 		];
 		//setting search conditions
 		$query->whereRaw($search_condition, $search_params);
@@ -83,7 +84,8 @@ class AkadMk extends Model
 			"id_prodi",
 			"date_created",
 			"date_updated",
-			"isactive" 
+			"isactive",
+			"semester" 
 		];
 	}
 	
@@ -114,7 +116,8 @@ class AkadMk extends Model
 			"id_prodi",
 			"date_created",
 			"date_updated",
-			"isactive" 
+			"isactive",
+			"semester" 
 		];
 	}
 	
@@ -145,7 +148,8 @@ class AkadMk extends Model
 			"id_prodi",
 			"date_created",
 			"date_updated",
-			"isactive" 
+			"isactive",
+			"semester" 
 		];
 	}
 	
@@ -176,7 +180,8 @@ class AkadMk extends Model
 			"id_prodi",
 			"date_created",
 			"date_updated",
-			"isactive" 
+			"isactive",
+			"semester" 
 		];
 	}
 	
@@ -205,7 +210,8 @@ class AkadMk extends Model
 			"upload_bahan_mk",
 			"upload_diktat_mk",
 			"id_prodi",
-			"isactive" 
+			"isactive",
+			"semester" 
 		];
 	}
 }

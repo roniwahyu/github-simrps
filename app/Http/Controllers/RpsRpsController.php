@@ -43,6 +43,9 @@ class RpsRpsController extends Controller
      */
 	function view($rec_id = null){
 		$query = RpsRps::query();
+		$query->join("akad_mk", "rps_rps.id_mk", "=", "akad_mk.id");
+		$query->join("akad_prodi", "akad_mk.id_prodi", "=", "akad_prodi.id_prodi");
+		$query->join("akad_fakultas", "akad_prodi.fakultas_id", "=", "akad_fakultas.id_fakultas");
 		$record = $query->findOrFail($rec_id, RpsRps::viewFields());
 		return $this->renderView("pages.rpsrps.view", ["data" => $record]);
 	}
@@ -113,4 +116,6 @@ class RpsRpsController extends Controller
 		$redirectUrl = $request->redirect ?? url()->previous();
 		return $this->redirect($redirectUrl, "Record deleted successfully");
 	}
+
+	
 }

@@ -28,8 +28,8 @@ class RpsRpsEditRequest extends FormRequest
 				"id_fakultas" => "nullable",
 				"id_prodi" => "nullable",
 				"id_mk" => "nullable",
-				"id_otoritas1" => "nullable|numeric",
-				"id_otoritas2" => "nullable|numeric",
+				"id_otoritas1" => "nullable",
+				"id_otoritas2" => "nullable",
 				"deskripsi_rps" => "nullable",
             
         ];

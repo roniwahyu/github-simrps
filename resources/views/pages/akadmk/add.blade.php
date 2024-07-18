@@ -377,6 +377,18 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group ">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="control-label" for="semester">Semester </label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div id="ctrl-semester-holder" class=" ">
+                                                <input id="ctrl-semester" data-field="semester"  value="<?php echo get_value('semester') ?>" type="text" placeholder="Enter Semester"  name="semester"  class="form-control " />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-ajax-status"></div>
                             <!--[form-button-start]-->

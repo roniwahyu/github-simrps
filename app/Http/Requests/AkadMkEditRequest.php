@@ -42,6 +42,7 @@ class AkadMkEditRequest extends FormRequest
 				"upload_diktat_mk" => "filled|string",
 				"id_prodi" => "nullable",
 				"isactive" => "nullable",
+				"semester" => "nullable|string",
             
         ];
     }

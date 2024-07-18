@@ -51,7 +51,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                 <select  id="ctrl-id_fakultas" data-field="id_fakultas" name="id_fakultas"  placeholder="Select a value ..."    class="form-select" >
                                                 <option value="">Select a value ...</option>
                                                 <?php 
-                                                    $options = $comp_model->fakultas_id_option_list() ?? [];
+                                                    $options = $comp_model->id_fakultas_option_list() ?? [];
                                                     foreach($options as $option){
                                                     $value = $option->value;
                                                     $label = $option->label ?? $value;
@@ -78,7 +78,7 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                                 <select  id="ctrl-id_prodi" data-field="id_prodi" name="id_prodi"  placeholder="Select a value ..."    class="form-select" >
                                                 <option value="">Select a value ...</option>
                                                 <?php 
-                                                    $options = $comp_model->id_prodi_option_list() ?? [];
+                                                    $options = $comp_model->rpsrps_id_prodi_option_list() ?? [];
                                                     foreach($options as $option){
                                                     $value = $option->value;
                                                     $label = $option->label ?? $value;
@@ -102,10 +102,10 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </div>
                                         <div class="col-sm-8">
                                             <div id="ctrl-id_mk-holder" class=" ">
-                                                <select  id="ctrl-id_mk" data-field="id_mk" name="id_mk"  placeholder="Select a value ..."    class="form-select" >
+                                                <select  id="ctrl-id_mk" data-field="id_mk" name="id_mk"  placeholder="Select a value ..."    class="selectize" >
                                                 <option value="">Select a value ...</option>
                                                 <?php 
-                                                    $options = $comp_model->id_mk_option_list() ?? [];
+                                                    $options = $comp_model->rpsrps_id_mk_option_list() ?? [];
                                                     foreach($options as $option){
                                                     $value = $option->value;
                                                     $label = $option->label ?? $value;
@@ -129,7 +129,22 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </div>
                                         <div class="col-sm-8">
                                             <div id="ctrl-id_otoritas1-holder" class=" ">
-                                                <input id="ctrl-id_otoritas1" data-field="id_otoritas1"  value="<?php echo get_value('id_otoritas1') ?>" type="number" placeholder="Enter Id Otoritas1" step="any"  name="id_otoritas1"  class="form-control " />
+                                                <select  id="ctrl-id_otoritas1" data-field="id_otoritas1" name="id_otoritas1"  placeholder="Select a value ..."    class="selectize" >
+                                                <option value="">Select a value ...</option>
+                                                <?php 
+                                                    $options = $comp_model->id_otoritas1_option_list() ?? [];
+                                                    foreach($options as $option){
+                                                    $value = $option->value;
+                                                    $label = $option->label ?? $value;
+                                                    $selected = Html::get_field_selected('id_otoritas1', $value, "");
+                                                ?>
+                                                <option <?php echo $selected; ?> value="<?php echo $value; ?>">
+                                                <?php echo $label; ?>
+                                                </option>
+                                                <?php
+                                                    }
+                                                ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +156,22 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                         </div>
                                         <div class="col-sm-8">
                                             <div id="ctrl-id_otoritas2-holder" class=" ">
-                                                <input id="ctrl-id_otoritas2" data-field="id_otoritas2"  value="<?php echo get_value('id_otoritas2') ?>" type="number" placeholder="Enter Id Otoritas2" step="any"  name="id_otoritas2"  class="form-control " />
+                                                <select  id="ctrl-id_otoritas2" data-field="id_otoritas2" name="id_otoritas2"  placeholder="Select a value ..."    class="selectize" >
+                                                <option value="">Select a value ...</option>
+                                                <?php 
+                                                    $options = $comp_model->id_otoritas1_option_list() ?? [];
+                                                    foreach($options as $option){
+                                                    $value = $option->value;
+                                                    $label = $option->label ?? $value;
+                                                    $selected = Html::get_field_selected('id_otoritas2', $value, "");
+                                                ?>
+                                                <option <?php echo $selected; ?> value="<?php echo $value; ?>">
+                                                <?php echo $label; ?>
+                                                </option>
+                                                <?php
+                                                    }
+                                                ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
