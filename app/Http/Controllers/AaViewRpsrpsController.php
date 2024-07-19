@@ -32,4 +32,5 @@ class AaViewRpsrpsController extends Controller
 		$records = $query->paginate($limit, AaViewRpsrps::listFields());
 		return $this->renderView($view, compact("records"));
 	}
+	
 }

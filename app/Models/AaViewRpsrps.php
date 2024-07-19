@@ -12,15 +12,19 @@ class AaViewRpsrps extends Model
      * @var string
      */
 	protected $table = 'aa_view_rpsrps';
-	
 
-	/**
-     * The table primary key field
-     *
-     * @var string
-     */
-	protected $primaryKey = '';
-	public $incrementing = false;
+    // Assuming the view does not have a primary key, set the following to false
+    public $incrementing = false;
+    protected $primaryKey = null;
+
+    // If the view is read-only, you can set timestamps to false
+    public $timestamps = false;
+
+    // Define the listFields method
+    public static function listFields() {
+        return ['id', 'kode_prodi', 'nama_prodi', 'kode_fakultas', 'nama_fakultas', 'deskripsi_rps', 'kode_mk', 'nm_mk'];
+    }
+
 	
 
 	/**
@@ -30,7 +34,6 @@ class AaViewRpsrps extends Model
      */
 	protected $fillable = [
 	];
-	public $timestamps = false;
 	
 
 	/**
@@ -62,4 +65,6 @@ class AaViewRpsrps extends Model
 		return [ 
 		];
 	}
+	
+	
 }
