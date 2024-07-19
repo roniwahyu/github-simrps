@@ -42,73 +42,85 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                             $rec_id = ($data['role_id'] ? urlencode($data['role_id']) : null);
                         ?>
                         <div id="page-main-content" class=" px-3 mb-3">
-                            <div class="ajax-page-load-indicator" style="display:none">
-                                <div class="text-center d-flex justify-content-center load-indicator">
-                                    <span class="loader mr-3"></span>
-                                    <span class="fw-bold">Loading...</span>
+                            <div class="row gutter-lg ">
+                                <div class="col">
+                                    <div class="ajax-page-load-indicator" style="display:none">
+                                        <div class="text-center d-flex justify-content-center load-indicator">
+                                            <span class="loader mr-3"></span>
+                                            <span class="fw-bold">Loading...</span>
+                                        </div>
+                                    </div>
+                                    <div class="page-data">
+                                        <!--PageComponentStart-->
+                                        <div class="mb-3 row row justify-content-start g-0">
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">Role Id</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['role_id'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">Role Name</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['role_name'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">Date Created</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['date_created'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="bg-light mb-1 card-1 p-2 border rounded">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <small class="text-muted">Date Updated</small>
+                                                            <div class="fw-bold">
+                                                                <?php echo  $data['date_updated'] ; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--PageComponentEnd-->
+                                        <div class="d-flex align-items-center gap-2">
+                                            <a class="btn btn-sm btn-success has-tooltip "   title="Edit" href="<?php print_link("roles/edit/$rec_id"); ?>" >
+                                            <i class="fa fa-edit"></i> Edit
+                                        </a>
+                                        <a class="btn btn-sm btn-danger has-tooltip record-delete-btn" data-prompt-msg="Are you sure you want to delete this record?" data-display-style="modal" title="Delete" href="<?php print_link("roles/delete/$rec_id?redirect=roles"); ?>" >
+                                        <i class="fa fa-times"></i> Delete
+                                    </a>
                                 </div>
                             </div>
-                            <div class="page-data">
-                                <!--PageComponentStart-->
-                                <div class="mb-3 row row justify-content-start g-0">
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">Role Id</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['role_id'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">Role Name</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['role_name'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">Date Created</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['date_created'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="bg-light mb-1 card-1 p-2 border rounded">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <small class="text-muted">Date Updated</small>
-                                                    <div class="fw-bold">
-                                                        <?php echo  $data['date_updated'] ; ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--PageComponentEnd-->
-                                <div class="d-flex align-items-center gap-2">
-                                    <a class="btn btn-sm btn-success has-tooltip "   title="Edit" href="<?php print_link("roles/edit/$rec_id"); ?>" >
-                                    <i class="fa fa-edit"></i> Edit
-                                </a>
-                                <a class="btn btn-sm btn-danger has-tooltip record-delete-btn" data-prompt-msg="Are you sure you want to delete this record?" data-display-style="modal" title="Delete" href="<?php print_link("roles/delete/$rec_id?redirect=roles"); ?>" >
-                                <i class="fa fa-times"></i> Delete
-                            </a>
                         </div>
+                        <!-- Detail Page Column -->
+                        <?php if(!request()->has('subpage')){ ?>
+                        <div class="col-12">
+                            <div class="my-3 p-1 ">
+                                @include("pages.roles.detail-pages", ["masterRecordId" => $rec_id])
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php

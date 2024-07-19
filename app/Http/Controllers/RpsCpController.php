@@ -53,20 +53,18 @@ class RpsCpController extends Controller
      * @return \Illuminate\View\View
      */
 	function add(){
-		return $this->renderView("pages.rpscp.add");
+		return view("pages.rpscp.add");
 	}
 	
 
 	/**
-     * Save form record to the table
+     * Insert multiple record into the database table
      * @return \Illuminate\Http\Response
      */
 	function store(RpsCpAddRequest $request){
-		$modeldata = $this->normalizeFormData($request->validated());
-		
-		//save RpsCp record
-		$record = RpsCp::create($modeldata);
-		$rec_id = $record->id;
+		$postdata = $request->input("row");
+		$modeldata = array_values($postdata);
+		RpsCp::insert($modeldata);
 		return $this->redirect("rpscp", "Record added successfully");
 	}
 	

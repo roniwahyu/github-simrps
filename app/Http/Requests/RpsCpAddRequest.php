@@ -25,11 +25,11 @@ class RpsCpAddRequest extends FormRequest
 		
         return [
             
-				"id_prodi" => "nullable|numeric",
-				"kode_cp" => "nullable|string",
-				"nama_cp" => "nullable",
-				"deskripsi" => "nullable",
-				"id_jenis_cp" => "nullable",
+				"row.*.id_prodi" => "nullable|numeric",
+				"row.*.kode_cp" => "nullable|string",
+				"row.*.nama_cp" => "nullable",
+				"row.*.deskripsi" => "nullable",
+				"row.*.id_jenis_cp" => "nullable",
             
         ];
     }

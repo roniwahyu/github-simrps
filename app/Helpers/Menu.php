@@ -162,79 +162,167 @@
 		
 		[
 			'path' => 'rpscp',
-			'label' => "Rps Cp", 
+			'label' => "RPS CP Lulusan", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpscpjenis',
-			'label' => "Rps Cp Jenis", 
+			'label' => "RPS Jenis CP", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpscpmk',
-			'label' => "Rps Cp Mk", 
+			'label' => "RPS CPMK", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpscprps',
-			'label' => "Rps Cp Rps", 
+			'label' => "RPS CP", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpscpsubmk',
-			'label' => "Rps Cp Sub Mk", 
+			'label' => "RPS Sub CPMK", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpskategorirelasi',
-			'label' => "Rps Kategori Relasi", 
+			'label' => "RPS Kategori Relasi", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpskriteriacapaian',
-			'label' => "Rps Kriteria Capaian", 
+			'label' => "RPS Kriteria Capaian", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpsmetodepembelajaran',
-			'label' => "Rps Metode Pembelajaran", 
+			'label' => "RPS Metode Pembelajaran", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpspembahasanrps',
-			'label' => "Rps Pembahasan Rps", 
+			'label' => "RPS Pembahasan", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpspenilaiancpmk',
-			'label' => "Rps Penilaian Cpmk", 
+			'label' => "RPS Penilaian CPMK", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpspustakarps',
-			'label' => "Rps Pustaka Rps", 
+			'label' => "RPS Pustaka", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpsrps',
-			'label' => "Rps Rps", 
+			'label' => "RPS", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
 		[
 			'path' => 'rpssubcpmkasesmen',
 			'label' => "Rps Sub Cpmk Asesmen", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => '00viewrpsrps',
+			'label' => "00 View Rpsrps", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'personalaccesstokens',
+			'label' => "Personal Access Tokens", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'passwordresettokens',
+			'label' => "Password Reset Tokens", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'migrations',
+			'label' => "Migrations", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'failedjobs',
+			'label' => "Failed Jobs", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'aaviewrpsrps',
+			'label' => "Aa View Rpsrps", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'rpsstandarcp',
+			'label' => "Rps Standar Cp", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		]
+	] ;
+	}
+	
+	public static function navbartopright(){
+		return [
+		[
+			'path' => '00viewrpsrps',
+			'label' => "00 View Rpsrps", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'personalaccesstokens',
+			'label' => "Personal Access Tokens", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'passwordresettokens',
+			'label' => "Password Reset Tokens", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'migrations',
+			'label' => "Migrations", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'failedjobs',
+			'label' => "Failed Jobs", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'aaviewrpsrps',
+			'label' => "Aa View Rpsrps", 
+			'icon' => '<i class="fa fa-globe"></i>'
+		],
+		
+		[
+			'path' => 'rpsstandarcp',
+			'label' => "Rps Standar Cp", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		]
 	] ;
@@ -292,24 +380,16 @@
 	public static function kelompokMk(){
 		return [
 		[
-			'value' => 'MPK', 
-			'label' => "MPK", 
+			'value' => 'MKU', 
+			'label' => "MKU", 
 		],
 		[
 			'value' => 'MKK', 
 			'label' => "MKK", 
 		],
 		[
-			'value' => 'MKB', 
-			'label' => "MKB", 
-		],
-		[
-			'value' => 'MPB', 
-			'label' => "MPB", 
-		],
-		[
-			'value' => 'MBB', 
-			'label' => "MBB", 
+			'value' => 'MKD', 
+			'label' => "MKD", 
 		],] ;
 	}
 	

@@ -121,11 +121,11 @@ class ComponentsData{
 	
 
 	/**
-     * id_rps_option_list Model Action
+     * id_cpmk_option_list Model Action
      * @return array
      */
-	function id_rps_option_list(){
-		$sqltext = "SELECT id as value, id as label FROM rps_rps";
+	function id_cpmk_option_list(){
+		$sqltext = "SELECT id as value, id as label FROM rps_cp_mk";
 		$query_params = [];
 		$arr = DB::select($sqltext, $query_params);
 		return $arr;
@@ -133,11 +133,11 @@ class ComponentsData{
 	
 
 	/**
-     * id_cpmk_option_list Model Action
+     * id_rps_option_list Model Action
      * @return array
      */
-	function id_cpmk_option_list(){
-		$sqltext = "SELECT id as value, id as label FROM rps_cp_mk";
+	function id_rps_option_list(){
+		$sqltext = "SELECT id as value, id as label FROM rps_rps";
 		$query_params = [];
 		$arr = DB::select($sqltext, $query_params);
 		return $arr;

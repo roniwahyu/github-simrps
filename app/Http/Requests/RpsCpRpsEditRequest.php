@@ -25,7 +25,6 @@ class RpsCpRpsEditRequest extends FormRequest
 		
         return [
             
-				"id_rps" => "nullable|numeric",
 				"nama_cp" => "nullable|string",
 				"id_cp" => "nullable|numeric",
             

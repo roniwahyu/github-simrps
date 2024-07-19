@@ -25,9 +25,8 @@ class RpsCpRpsAddRequest extends FormRequest
 		
         return [
             
-				"id_rps" => "nullable|numeric",
-				"nama_cp" => "nullable|string",
-				"id_cp" => "nullable|numeric",
+				"row.*.nama_cp" => "nullable|string",
+				"row.*.id_cp" => "nullable|numeric",
             
         ];
     }

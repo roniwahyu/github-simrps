@@ -77,9 +77,46 @@ class RpsRpsController extends Controller
 	function store(RpsRpsAddRequest $request){
 		$modeldata = $this->normalizeFormData($request->validated());
 		
+		//Validate RpsCpRps form data
+		$rpscprpsPostData = $request->rpscprps;
+		$rpscprpsValidator = validator()->make($rpscprpsPostData, ["*.nama_cp" => "nullable|string",
+				"*.id_cp" => "nullable|numeric"]);
+		if ($rpscprpsValidator->fails()) {
+			return $rpscprpsValidator->errors();
+		}
+		$rpscprpsValidData = $rpscprpsValidator->valid();
+		$rpscprpsModeldata = array_values($rpscprpsValidData);
+		
+		//Validate RpsCpMk form data
+		$rpscpmkPostData = $request->rpscpmk;
+		$rpscpmkValidator = validator()->make($rpscpmkPostData, ["*.id_mk" => "nullable",
+				"*.nama_cp" => "nullable|string",
+				"*.deskripsi" => "nullable|string"]);
+		if ($rpscpmkValidator->fails()) {
+			return $rpscpmkValidator->errors();
+		}
+		$rpscpmkValidData = $rpscpmkValidator->valid();
+		$rpscpmkModeldata = array_values($rpscpmkValidData);
+		
 		//save RpsRps record
 		$record = RpsRps::create($modeldata);
 		$rec_id = $record->id;
+		
+		// set rpscprps.id_rps to rps_rps $rec_id
+		foreach ($rpscprpsModeldata as &$data) {
+			$data['id_rps'] = $rec_id;
+		}
+		
+		//Save RpsCpRps record
+		\App\Models\RpsCpRps::insert($rpscprpsModeldata);
+		
+		// set rpscpmk.id_rps to rps_rps $rec_id
+		foreach ($rpscpmkModeldata as &$data) {
+			$data['id_rps'] = $rec_id;
+		}
+		
+		//Save RpsCpMk record
+		\App\Models\RpsCpMk::insert($rpscpmkModeldata);
 		return $this->redirect("rpsrps", "Record added successfully");
 	}
 	
@@ -116,6 +153,4 @@ class RpsRpsController extends Controller
 		$redirectUrl = $request->redirect ?? url()->previous();
 		return $this->redirect($redirectUrl, "Record deleted successfully");
 	}
-
-	
 }

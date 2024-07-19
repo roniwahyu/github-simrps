@@ -406,6 +406,34 @@ use Illuminate\Support\Facades\Mail;
 	Route::any('rpssubcpmkasesmen/edit/{rec_id}', 'RpsSubCpmkAsesmenController@edit')->name('rpssubcpmkasesmen.edit');	
 	Route::get('rpssubcpmkasesmen/delete/{rec_id}', 'RpsSubCpmkAsesmenController@delete');
 
+/* routes for 00ViewRpsrps Controller */
+	Route::get('00viewrpsrps', '00ViewRpsrpsController@index')->name('00viewrpsrps.index');
+	Route::get('00viewrpsrps/index/{filter?}/{filtervalue?}', '00ViewRpsrpsController@index')->name('00viewrpsrps.index');
+
+/* routes for PersonalAccessTokens Controller */
+	Route::get('personalaccesstokens', 'PersonalAccessTokensController@index')->name('personalaccesstokens.index');
+	Route::get('personalaccesstokens/index/{filter?}/{filtervalue?}', 'PersonalAccessTokensController@index')->name('personalaccesstokens.index');
+
+/* routes for PasswordResetTokens Controller */
+	Route::get('passwordresettokens', 'PasswordResetTokensController@index')->name('passwordresettokens.index');
+	Route::get('passwordresettokens/index/{filter?}/{filtervalue?}', 'PasswordResetTokensController@index')->name('passwordresettokens.index');
+
+/* routes for Migrations Controller */
+	Route::get('migrations', 'MigrationsController@index')->name('migrations.index');
+	Route::get('migrations/index/{filter?}/{filtervalue?}', 'MigrationsController@index')->name('migrations.index');
+
+/* routes for FailedJobs Controller */
+	Route::get('failedjobs', 'FailedJobsController@index')->name('failedjobs.index');
+	Route::get('failedjobs/index/{filter?}/{filtervalue?}', 'FailedJobsController@index')->name('failedjobs.index');
+
+/* routes for AaViewRpsrps Controller */
+	Route::get('aaviewrpsrps', 'AaViewRpsrpsController@index')->name('aaviewrpsrps.index');
+	Route::get('aaviewrpsrps/index/{filter?}/{filtervalue?}', 'AaViewRpsrpsController@index')->name('aaviewrpsrps.index');
+
+/* routes for RpsStandarCp Controller */
+	Route::get('rpsstandarcp', 'RpsStandarCpController@index')->name('rpsstandarcp.index');
+	Route::get('rpsstandarcp/index/{filter?}/{filtervalue?}', 'RpsStandarCpController@index')->name('rpsstandarcp.index');
+
 /**
  * All routes which requires auth
  */
@@ -470,15 +498,15 @@ Route::get('componentsdata/id_mk_option_list',  function(Request $request){
 	}
 );
 	
-Route::get('componentsdata/id_rps_option_list',  function(Request $request){
-		$compModel = new App\Models\ComponentsData();
-		return $compModel->id_rps_option_list($request);
-	}
-);
-	
 Route::get('componentsdata/id_cpmk_option_list',  function(Request $request){
 		$compModel = new App\Models\ComponentsData();
 		return $compModel->id_cpmk_option_list($request);
+	}
+);
+	
+Route::get('componentsdata/id_rps_option_list',  function(Request $request){
+		$compModel = new App\Models\ComponentsData();
+		return $compModel->id_rps_option_list($request);
 	}
 );
 	

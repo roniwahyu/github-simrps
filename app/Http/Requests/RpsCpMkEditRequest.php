@@ -26,7 +26,6 @@ class RpsCpMkEditRequest extends FormRequest
         return [
             
 				"id_mk" => "nullable",
-				"id_rps" => "nullable",
 				"nama_cp" => "nullable|string",
 				"deskripsi" => "nullable|string",
             

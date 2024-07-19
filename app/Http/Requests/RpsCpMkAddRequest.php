@@ -25,10 +25,9 @@ class RpsCpMkAddRequest extends FormRequest
 		
         return [
             
-				"id_mk" => "nullable",
-				"id_rps" => "nullable",
-				"nama_cp" => "nullable|string",
-				"deskripsi" => "nullable|string",
+				"row.*.id_mk" => "nullable",
+				"row.*.nama_cp" => "nullable|string",
+				"row.*.deskripsi" => "nullable|string",
             
         ];
     }

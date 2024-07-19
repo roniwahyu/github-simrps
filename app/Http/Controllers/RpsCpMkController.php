@@ -63,20 +63,18 @@ class RpsCpMkController extends Controller
      * @return \Illuminate\View\View
      */
 	function add(){
-		return $this->renderView("pages.rpscpmk.add");
+		return view("pages.rpscpmk.add");
 	}
 	
 
 	/**
-     * Save form record to the table
+     * Insert multiple record into the database table
      * @return \Illuminate\Http\Response
      */
 	function store(RpsCpMkAddRequest $request){
-		$modeldata = $this->normalizeFormData($request->validated());
-		
-		//save RpsCpMk record
-		$record = RpsCpMk::create($modeldata);
-		$rec_id = $record->id;
+		$postdata = $request->input("row");
+		$modeldata = array_values($postdata);
+		RpsCpMk::insert($modeldata);
 		return $this->redirect("rpscpmk", "Record added successfully");
 	}
 	
