@@ -111,19 +111,15 @@ e.g $arrDataFromDb = $comp_model->fetchData(); //function name
                                             <td class="td-id">
                                                 <a href="<?php print_link("/rpsrps/view/$data[id]") ?>"><?php echo $data['id']; ?></a>
                                             </td>
-                                            <td>{{ $data->fakultas->nama_fakultas ?? 'N/A' }}</td>
-                                            <td>({{ $data->prodi->kode_prodi }}) - {{ $data->prodi->nama_prodi }}</td>
-                                            <td>({{ $data->mk->kode_mk }}) - {{ $data->mk->nm_mk }}</td>
-
-                                            <!-- <td class="td-id_fakultas">
+                                            <td class="td-id_fakultas">
                                                 <a size="sm" class="btn btn-sm btn btn-secondary page-modal" href="<?php print_link("akadfakultas/view/$data[id_fakultas]?subpage=1") ?>">
-                                                <i class="fa fa-eye"></i> <?php //echo "Akad Fakultas" ?></a>
-                                            </td> -->
-                                        <!-- <td class="td-id_prodi">
+                                                <i class="fa fa-eye"></i> <?php echo "Akad Fakultas" ?></a>
+                                            </td>
+                                        <td class="td-id_prodi">
                                             <a size="sm" class="btn btn-sm btn btn-secondary page-modal" href="<?php print_link("akadprodi/view/$data[id_prodi]?subpage=1") ?>">
-                                            <i class="fa fa-eye"></i> <?php //echo "Akad Prodi" ?></a>
-                                        </td> -->
-                                    <!-- <td class="td-id_mk"><strong><?php //echo $data['id_mk']; ?></strong></td> -->
+                                            <i class="fa fa-eye"></i> <?php echo "Akad Prodi" ?></a>
+                                        </td>
+                                    <td class="td-id_mk"><strong><?php echo $data['id_mk']; ?></strong></td>
                                     <td class="td-id_otoritas1">
                                         <?php echo  $data['id_otoritas1'] ; ?>
                                     </td>

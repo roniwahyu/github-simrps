@@ -396,6 +396,11 @@ use Illuminate\Support\Facades\Mail;
 	Route::any('rpsrps/edit/{rec_id}', 'RpsRpsController@edit')->name('rpsrps.edit');	
 	Route::get('rpsrps/delete/{rec_id}', 'RpsRpsController@delete');
 
+	Route::get('rpsrps/fakultas/{id_fakultas}', 'RpsRpsController@getFakultas')->name('rpsrps.getFakultas');
+	Route::get('rpsrps/prodi/{id_prodi}', 'RpsRpsController@getProdi')->name('rpsrps.getProdi');
+	Route::get('rpsrps/mk/{id}', 'RpsRpsController@getMk')->name('rpsrps.getMk');
+
+
 /* routes for RpsSubCpmkAsesmen Controller */
 	Route::get('rpssubcpmkasesmen', 'RpsSubCpmkAsesmenController@index')->name('rpssubcpmkasesmen.index');
 	Route::get('rpssubcpmkasesmen/index/{filter?}/{filtervalue?}', 'RpsSubCpmkAsesmenController@index')->name('rpssubcpmkasesmen.index');	
@@ -427,8 +432,6 @@ use Illuminate\Support\Facades\Mail;
 	Route::get('failedjobs/index/{filter?}/{filtervalue?}', 'FailedJobsController@index')->name('failedjobs.index');
 
 /* routes for AaViewRpsrps Controller */
-	Route::get('aaviewrpsrps', 'AaViewRpsrpsController@index')->name('aaviewrpsrps.index');
-	Route::get('aaviewrpsrps/index/{filter?}/{filtervalue?}', 'AaViewRpsrpsController@index')->name('aaviewrpsrps.index');
 
 /* routes for RpsStandarCp Controller */
 	Route::get('rpsstandarcp', 'RpsStandarCpController@index')->name('rpsstandarcp.index');

@@ -162,32 +162,4 @@ class RpsRps extends Model
 			"id" 
 		];
 	}
-
-	 // Define the relationship with the RpsFakultas model
-	public function fakultas() {
-        return $this->belongsTo('App\Models\AkadFakultas', 'id_fakultas', 'id_fakultas');
-    }
-	public function prodi() {
-        return $this->belongsTo(AkadProdi::class, 'id_prodi', 'id_prodi');
-    }
-	public function mk() {
-        return $this->belongsTo(AkadMk::class, 'id_mk', 'id');
-    }
-	
-	public static function viewFakultas() {
-        return [
-            'rps_rps.id AS id',
-            'rps_rps.id_fakultas AS id_fakultas',
-            'akad_fakultas.nama_fakultas AS nama_fakultas',
-            // add other fields as necessary
-        ];
-    }
-	public static function listFakultas() {
-        return [
-            'id',
-            'id_fakultas',
-            'deskripsi_rps'
-            // add other fields as necessary
-        ];
-    }
 }

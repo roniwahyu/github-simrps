@@ -269,12 +269,6 @@
 		],
 		
 		[
-			'path' => 'aaviewrpsrps',
-			'label' => "Aa View Rpsrps", 
-			'icon' => '<i class="fa fa-globe"></i>'
-		],
-		
-		[
 			'path' => 'rpsstandarcp',
 			'label' => "Rps Standar Cp", 
 			'icon' => '<i class="fa fa-globe"></i>'
@@ -311,12 +305,6 @@
 		[
 			'path' => 'failedjobs',
 			'label' => "Failed Jobs", 
-			'icon' => '<i class="fa fa-globe"></i>'
-		],
-		
-		[
-			'path' => 'aaviewrpsrps',
-			'label' => "Aa View Rpsrps", 
 			'icon' => '<i class="fa fa-globe"></i>'
 		],
 		
